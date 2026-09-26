@@ -1,0 +1,615 @@
+{
+  "generated": "2026-09-26T10:40:02Z",
+  "sources": {
+    "schedule": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/schedule.yaml",
+    "eol": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/eol.yaml",
+    "releases": "https://github.com/kubernetes/kubernetes"
+  },
+  "strategies": [
+    "client-amd64",
+    "src"
+  ],
+  "releases": [
+    {
+      "minor": "1.37",
+      "supported": true,
+      "releaseDate": "2026-08-26",
+      "endOfLifeDate": "2027-10-28",
+      "maintenanceModeStartDate": "2027-08-28",
+      "finalPatchRelease": null,
+      "latest": "1.37.1",
+      "patches": [
+        {
+          "version": "1.37.0",
+          "pins": {
+            "src": "sha256-irRDtPf+bk2uQ/QOcAXzYcrm/0pys/e4M5ITyL6omqs=",
+            "client-amd64": "sha256-U3w/NWRaN1GBPZw+l0SRP44E2NM8296NA9pbySgs/aM="
+          }
+        },
+        {
+          "version": "1.37.1",
+          "pins": {
+            "src": "sha256-9p7t8EN6Iv3Q2ClJgCgSUJP1Qdp7B47fOe0roP5jZbg=",
+            "client-amd64": "sha256-LlcbZs8tYhPBb17TkcpkOKbrUUAPP9Pys8iIH0kD5F0="
+          }
+        }
+      ]
+    },
+    {
+      "minor": "1.36",
+      "supported": true,
+      "releaseDate": "2026-04-22",
+      "endOfLifeDate": "2027-06-28",
+      "maintenanceModeStartDate": "2027-04-28",
+      "finalPatchRelease": null,
+      "latest": "1.36.5",
+      "patches": [
+        {
+          "version": "1.36.0",
+          "pins": {
+            "src": "sha256-6waSybeFc6xMIT93WLR1OPN/bhcHzvUzJGZliEuEQIM=",
+            "client-amd64": "sha256-cXU/cyd6O30VmsdOWLzdiKhx9URp4C77dso8K1glJzQ="
+          }
+        },
+        {
+          "version": "1.36.1",
+          "pins": {
+            "src": "sha256-QG2zFaFtGXoWIlyp3hVBRU+OHre/6vWcvijUe1DdjIo=",
+            "client-amd64": "sha256-w7UgIZChHm6pOETiHPXm/yEYk79cNlnNez77JCR6I2c="
+          }
+        },
+        {
+          "version": "1.36.2",
+          "pins": {
+            "src": "sha256-vE+2iBoJvkRhJDAHMCrJLIJKD53YWRBN6fBUP4589OU=",
+            "client-amd64": "sha256-BxV2Mpy+YqAsQ1CCQFO/++H/k3G4NjV35mmtl7jlo3U="
+          }
+        },
+        {
+          "version": "1.36.3",
+          "pins": {
+            "src": "sha256-yqxE+it+uYQrJJs3TJI2D6IQRJizieUQyPQMLIOPWqA=",
+            "client-amd64": "sha256-jFeueR0d14X6FF1qPzfa2CJHQTAlSks3h/bkeoFm6yY="
+          }
+        },
+        {
+          "version": "1.36.4",
+          "pins": {
+            "src": "sha256-cOrTskng+TTesoC2Ss6H7tGjW6e3fm/eKQUewJZeL6o=",
+            "client-amd64": "sha256-/BvzBNbxRbBZoneU4hPBInWxi6h0IDMmdfs1fRYAQkk="
+          }
+        },
+        {
+          "version": "1.36.5",
+          "pins": {
+            "src": "sha256-M5wVu5678Eow6xMLNZXcfPLlS9z11RpwwzvmYd8NEeE=",
+            "client-amd64": "sha256-PDT/5UW1Z/K+UQOaC+qZ/8ZmwFylc+3qSTVfbCDEhk4="
+          }
+        }
+      ]
+    },
+    {
+      "minor": "1.35",
+      "supported": true,
+      "releaseDate": "2025-12-17",
+      "endOfLifeDate": "2027-02-28",
+      "maintenanceModeStartDate": "2026-12-28",
+      "finalPatchRelease": null,
+      "latest": "1.35.9",
+      "patches": [
+        {
+          "version": "1.35.0",
+          "pins": {
+            "src": "sha256-AT1/4RhnVK/mAoNVqPIfSwbzD8VNRqKumOpE0fidJ74=",
+            "client-amd64": "sha256-kpjVcd0H8pYBgw0l1OMp6a5D6uYFmfxkoW3vN3FRjXk="
+          }
+        },
+        {
+          "version": "1.35.1",
+          "pins": {
+            "src": "sha256-Y5ixQgAdtMBUs/nfPOOdu4pp9uOh/Cr57HO/Owf7PwI=",
+            "client-amd64": "sha256-+YIdAJlnAl4WC+Hc7Dp6rCYYQZn4lxM34Xmbujc9paI="
+          }
+        },
+        {
+          "version": "1.35.2",
+          "pins": {
+            "src": "sha256-cmR5ugxeBC0RsrvQ38zK6/5QGptAfTk6bXo53XHkU2s=",
+            "client-amd64": "sha256-l3kjnGwJmWJxHLxt5Vinwdg0HDaSrhvSmBbwCLIEcAc="
+          }
+        },
+        {
+          "version": "1.35.3",
+          "pins": {
+            "src": "sha256-woIp7AnW7r3y0rpKO03+0t6ONyNXTS1IYxW40E1O8DA=",
+            "client-amd64": "sha256-O8RkqtjxuiZbTZLSUUILlMTYYjV75zaNIYYLM1dBO1Q="
+          }
+        },
+        {
+          "version": "1.35.4",
+          "pins": {
+            "src": "sha256-UXYkReGD77Uu0P0iYvkK58Uj0f7CuXGMb1WJBD7/61U=",
+            "client-amd64": "sha256-7/knqA3EdMJ+ficrixj9U0i+9VtpEbC24gB2hQipCNU="
+          }
+        },
+        {
+          "version": "1.35.5",
+          "pins": {
+            "src": "sha256-JBULADBfE/TqY5eae6X2zXrsfcxbBN8bjxGQdTRUJ7Q=",
+            "client-amd64": "sha256-nsBbAay2cg5aG/Am64qyDKwA2tgd+wtYCvwlSR6JL78="
+          }
+        },
+        {
+          "version": "1.35.6",
+          "pins": {
+            "src": "sha256-tmDX+FfUyaP2im1++2Txa1GI+qtnR1ayrM3NZvLiMWg=",
+            "client-amd64": "sha256-qytOA9O+wJwyL9kcc2LmloFf644Ud2Q+GS6p05vxob0="
+          }
+        },
+        {
+          "version": "1.35.7",
+          "pins": {
+            "src": "sha256-GcAc071Ueka7P5kVTIwCNu6FBH/9xhWYfKdtaLAk4Fc=",
+            "client-amd64": "sha256-IFgugxUm/n4GHl2RijzJ1D+qYFd0UJQJWbd0nsPLjc8="
+          }
+        },
+        {
+          "version": "1.35.8",
+          "pins": {
+            "src": "sha256-ubVReJ2ctFb67WUHbyujhmDPdeVxd7qbw3tikoS1+yg=",
+            "client-amd64": "sha256-zdRTZJuxVQ69dHAmxl5JONaLbwv1gKyT+xl1zpdal9A="
+          }
+        },
+        {
+          "version": "1.35.9",
+          "pins": {
+            "src": "sha256-y7GR3hDcWiFBbpJBAGTsTM70jqo7jss4Flqb9udhnCs=",
+            "client-amd64": "sha256-IdR77a3j+In8FwsOvG7CGGT4Y/mN+V4TzFr341cDcko="
+          }
+        }
+      ]
+    },
+    {
+      "minor": "1.34",
+      "supported": true,
+      "releaseDate": "2025-08-27",
+      "endOfLifeDate": "2026-10-27",
+      "maintenanceModeStartDate": "2026-08-27",
+      "finalPatchRelease": null,
+      "latest": "1.34.12",
+      "patches": [
+        {
+          "version": "1.34.0",
+          "pins": {
+            "src": "sha256-rKy4X01pX+kovJ8b2JHV0KuzHJ7PYZ08eDEO3GeuPoc=",
+            "client-amd64": "sha256-wfOj4qOp/383IxQteIfoPS8dhz53MEAO7k7Sftc9OYA="
+          }
+        },
+        {
+          "version": "1.34.1",
+          "pins": {
+            "src": "sha256-18AMfS2OnInTmdr5fLwtuKaeyGQSiAtk29BjuHl6qQA=",
+            "client-amd64": "sha256-w4SEE0gLDNvCNlx4b8869frKga7bS3bdWDgD2IfFuyM="
+          }
+        },
+        {
+          "version": "1.34.2",
+          "pins": {
+            "src": "sha256-3rQyoGt9zTeF8+PIhA5p+hHY1V5O8CawvKWscf/r9RM=",
+            "client-amd64": "sha256-xXTj7/7HI2H2alQYbUMj4myBlvLhC4wP/mj/dGqvYYc="
+          }
+        },
+        {
+          "version": "1.34.3",
+          "pins": {
+            "src": "sha256-1X2kxUi7jNnyTNo+ZGZmhU5DHVl98eYOrJ4qpjzqqjE=",
+            "client-amd64": "sha256-SpvYGo0h3aHZZpQuhkxniaHtV+tFKj0g//qYNPH2nEA="
+          }
+        },
+        {
+          "version": "1.34.4",
+          "pins": {
+            "src": "sha256-kw992zj4VrpsuGgBtGD92ok3QoNcl4K42rOJVv+9BJc=",
+            "client-amd64": "sha256-HyjypOF4X7ii80bx/XDGjI0+Axqzwd39Uz3X4ATZg3w="
+          }
+        },
+        {
+          "version": "1.34.5",
+          "pins": {
+            "src": "sha256-xleHAyasIXAqcS0V5X9Xc8u9TNy0L2gsV2/XjgFcMq0=",
+            "client-amd64": "sha256-p2XTXfDoAO3HnUDg23PJovoy5LLxVjNMqsbtNml5Wdc="
+          }
+        },
+        {
+          "version": "1.34.6",
+          "pins": {
+            "src": "sha256-qmn5H4Km7B12f9UG4lddr/7MVlIzhNOyCDyqNBFYzVk=",
+            "client-amd64": "sha256-deLLjeYhNJ4Bv53FZeqDd6g+GUZupuwdGZ0MHfHrKVc="
+          }
+        },
+        {
+          "version": "1.34.7",
+          "pins": {
+            "src": "sha256-pDSVKgFIcMUDiy0BWx/VadwuatteUwmctaNbCLY4Yhg=",
+            "client-amd64": "sha256-gcq5LgYnNby42V9HyHRfv+p0IPz+Ru1hc1CJZBvsJgc="
+          }
+        },
+        {
+          "version": "1.34.8",
+          "pins": {
+            "src": "sha256-cjWslLTIQLl+u6ecfD29qvtyOicwVKZTM1zp4FA1Kj0=",
+            "client-amd64": "sha256-OU28PysCnXpbGXWsley3tKWHEBH7ih8yLNunrFZRpro="
+          }
+        },
+        {
+          "version": "1.34.9",
+          "pins": {
+            "src": "sha256-yIgvK2vo9ZQM5Z9shz5bhYoVKe+QP+7BlG/hV8b5y3Q=",
+            "client-amd64": "sha256-GSxrrKovTtzWfgzPdqOxKHSsGL2ma/kTDMkQUZV1BuE="
+          }
+        },
+        {
+          "version": "1.34.10",
+          "pins": {
+            "src": "sha256-NN9BWQIK+B39FLbD4nTbV9M2fAXw7va9GLD3HgOdpuk=",
+            "client-amd64": "sha256-nXUTbdc2BUi8Z5ZFlA9GFdAHs5OcrJMtujYEVueFpUo="
+          }
+        },
+        {
+          "version": "1.34.11",
+          "pins": {
+            "src": "sha256-66jZOm07X29jK7FHl6JnTPd5k58tWb43DfO6Sp2lago=",
+            "client-amd64": "sha256-qCR7r04xNu9XfB4RTJjW7xGCSx3HqAvQTRLxAI2XSug="
+          }
+        },
+        {
+          "version": "1.34.12",
+          "pins": {
+            "src": "sha256-b5IyiqtPkYzJxaFMZYpVTNBPlKXqIuDSWbCY3ZTqA1s=",
+            "client-amd64": "sha256-bOE6reVvgD/iS7oniY1fTRiLZ30XqHw5QtycZ+laSBA="
+          }
+        }
+      ]
+    },
+    {
+      "minor": "1.33",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2026-06-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.33.13",
+      "latest": "1.33.13",
+      "patches": []
+    },
+    {
+      "minor": "1.32",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2026-02-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.32.13",
+      "latest": "1.32.13",
+      "patches": []
+    },
+    {
+      "minor": "1.31",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2025-11-11",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.31.14",
+      "latest": "1.31.14",
+      "patches": []
+    },
+    {
+      "minor": "1.30",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2025-07-15",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.30.14",
+      "latest": "1.30.14",
+      "patches": []
+    },
+    {
+      "minor": "1.29",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2025-02-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.29.14",
+      "latest": "1.29.15",
+      "patches": []
+    },
+    {
+      "minor": "1.28",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2024-10-22",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.28.15",
+      "latest": "1.28.15",
+      "patches": []
+    },
+    {
+      "minor": "1.27",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2024-07-16",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.27.16",
+      "latest": "1.27.16",
+      "patches": []
+    },
+    {
+      "minor": "1.26",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2024-02-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.26.15",
+      "latest": "1.26.15",
+      "patches": []
+    },
+    {
+      "minor": "1.25",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2023-10-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.25.16",
+      "latest": "1.25.16",
+      "patches": []
+    },
+    {
+      "minor": "1.24",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2023-07-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.24.17",
+      "latest": "1.24.17",
+      "patches": []
+    },
+    {
+      "minor": "1.23",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2023-02-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.23.17",
+      "latest": "1.23.17",
+      "patches": []
+    },
+    {
+      "minor": "1.22",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2022-12-08",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.22.17",
+      "latest": "1.22.17",
+      "patches": []
+    },
+    {
+      "minor": "1.21",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2022-06-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.21.14",
+      "latest": "1.21.14",
+      "patches": []
+    },
+    {
+      "minor": "1.20",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2022-02-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.20.15",
+      "latest": "1.20.15",
+      "patches": []
+    },
+    {
+      "minor": "1.19",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2021-10-28",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.19.16",
+      "latest": "1.19.16",
+      "patches": []
+    },
+    {
+      "minor": "1.18",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2021-06-18",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.18.20",
+      "latest": "1.18.20",
+      "patches": []
+    },
+    {
+      "minor": "1.17",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2021-01-13",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.17.17",
+      "latest": "1.17.17",
+      "patches": []
+    },
+    {
+      "minor": "1.16",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2020-09-02",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.16.15",
+      "latest": "1.16.15",
+      "patches": []
+    },
+    {
+      "minor": "1.15",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2020-05-06",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.15.12",
+      "latest": "1.15.12",
+      "patches": []
+    },
+    {
+      "minor": "1.14",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2019-12-11",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.14.10",
+      "latest": "1.14.10",
+      "patches": []
+    },
+    {
+      "minor": "1.13",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2019-10-15",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.13.12",
+      "latest": "1.13.12",
+      "patches": []
+    },
+    {
+      "minor": "1.12",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2019-07-08",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.12.10",
+      "latest": "1.12.10",
+      "patches": []
+    },
+    {
+      "minor": "1.11",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2019-05-01",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.11.10",
+      "latest": "1.11.10",
+      "patches": []
+    },
+    {
+      "minor": "1.10",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2019-02-13",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.10.13",
+      "latest": "1.10.13",
+      "patches": []
+    },
+    {
+      "minor": "1.9",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2018-09-29",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.9.11",
+      "latest": "1.9.11",
+      "patches": []
+    },
+    {
+      "minor": "1.8",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2018-07-12",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.8.15",
+      "latest": "1.8.15",
+      "patches": []
+    },
+    {
+      "minor": "1.7",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2018-04-04",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.7.16",
+      "latest": "1.7.16",
+      "patches": []
+    },
+    {
+      "minor": "1.6",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2017-11-23",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.6.13",
+      "latest": "1.6.13",
+      "patches": []
+    },
+    {
+      "minor": "1.5",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2017-10-01",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.5.8",
+      "latest": "1.5.8",
+      "patches": []
+    },
+    {
+      "minor": "1.4",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2017-04-21",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.4.12",
+      "latest": "1.4.12",
+      "patches": []
+    },
+    {
+      "minor": "1.3",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2016-11-01",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.3.10",
+      "latest": "1.3.10",
+      "patches": []
+    },
+    {
+      "minor": "1.2",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": "2016-10-23",
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": "1.2.7",
+      "latest": "1.2.7",
+      "patches": []
+    },
+    {
+      "minor": "1.1",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": null,
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": null,
+      "latest": "1.1.8",
+      "patches": []
+    },
+    {
+      "minor": "1.0",
+      "supported": false,
+      "releaseDate": null,
+      "endOfLifeDate": null,
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": null,
+      "latest": "1.0.7",
+      "patches": []
+    }
+  ]
+}
