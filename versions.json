@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-26T10:40:02Z",
+  "generated": "2026-09-26T10:43:53Z",
   "sources": {
     "schedule": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/schedule.yaml",
     "eol": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/eol.yaml",
@@ -7,6 +7,8 @@
   },
   "strategies": [
     "client-amd64",
+    "node-amd64",
+    "server-amd64",
     "src"
   ],
   "releases": [
@@ -30,7 +32,9 @@
           "version": "1.37.1",
           "pins": {
             "src": "sha256-9p7t8EN6Iv3Q2ClJgCgSUJP1Qdp7B47fOe0roP5jZbg=",
-            "client-amd64": "sha256-LlcbZs8tYhPBb17TkcpkOKbrUUAPP9Pys8iIH0kD5F0="
+            "client-amd64": "sha256-LlcbZs8tYhPBb17TkcpkOKbrUUAPP9Pys8iIH0kD5F0=",
+            "server-amd64": "sha256-CdbeB9pI4WwPwETXvRnF3wxN59YtJ/WqZINF6A8xHhg=",
+            "node-amd64": "sha256-lWyayF5CRXMyiQEMWcWJryiZMe5Dqqtd/bCm6d/5X38="
           }
         }
       ]
@@ -83,7 +87,9 @@
           "version": "1.36.5",
           "pins": {
             "src": "sha256-M5wVu5678Eow6xMLNZXcfPLlS9z11RpwwzvmYd8NEeE=",
-            "client-amd64": "sha256-PDT/5UW1Z/K+UQOaC+qZ/8ZmwFylc+3qSTVfbCDEhk4="
+            "client-amd64": "sha256-PDT/5UW1Z/K+UQOaC+qZ/8ZmwFylc+3qSTVfbCDEhk4=",
+            "server-amd64": "sha256-f4fKnnExnXe1jmfoljdJikNr8bBY5AUTdjlsWkk3HhE=",
+            "node-amd64": "sha256-iyANVKV9WpcKM59pgv259r25hnUDGEgRlHlCn0vwpRo="
           }
         }
       ]
@@ -164,7 +170,9 @@
           "version": "1.35.9",
           "pins": {
             "src": "sha256-y7GR3hDcWiFBbpJBAGTsTM70jqo7jss4Flqb9udhnCs=",
-            "client-amd64": "sha256-IdR77a3j+In8FwsOvG7CGGT4Y/mN+V4TzFr341cDcko="
+            "client-amd64": "sha256-IdR77a3j+In8FwsOvG7CGGT4Y/mN+V4TzFr341cDcko=",
+            "server-amd64": "sha256-/PdRtDSqjrRQgALROWdEm2Gxayv5tVmSD1hUC55JKJQ=",
+            "node-amd64": "sha256-fsx6IdhWrga3I7M2XOZPcfgOc2H5R/EPHgm9maRGPAM="
           }
         }
       ]
@@ -266,7 +274,9 @@
           "version": "1.34.12",
           "pins": {
             "src": "sha256-b5IyiqtPkYzJxaFMZYpVTNBPlKXqIuDSWbCY3ZTqA1s=",
-            "client-amd64": "sha256-bOE6reVvgD/iS7oniY1fTRiLZ30XqHw5QtycZ+laSBA="
+            "client-amd64": "sha256-bOE6reVvgD/iS7oniY1fTRiLZ30XqHw5QtycZ+laSBA=",
+            "server-amd64": "sha256-mVP2eAZAIXxr7wFpkqdrDMXGED4f6zO2ynMny8y4beU=",
+            "node-amd64": "sha256-IttcskZQ20dEINgmyLQ6vfIMuG58FS8ZaRRLfUdrbJI="
           }
         }
       ]

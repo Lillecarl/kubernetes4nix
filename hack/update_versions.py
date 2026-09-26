@@ -189,11 +189,14 @@ async def compute_pins(
     strategies: list[str],
     existing: dict[str, dict[str, str]],
     jobs: int,
+    latest_only: bool,
 ) -> None:
     limiter = anyio.Semaphore(jobs)
     work: list[tuple[str, str]] = []
     for release in releases:
         for patch in release["patches"]:
+            if latest_only and patch["version"] != release["latest"]:
+                continue
             version = patch["version"]
             held = existing.get(version, {})
             for strategy in strategies:
@@ -233,6 +236,11 @@ async def main() -> int:
         help="comma-separated strategies to pin, or empty to leave pins untouched",
     )
     parser.add_argument("--jobs", type=int, default=8)
+    parser.add_argument(
+        "--latest-only",
+        action="store_true",
+        help="pin only the latest patch of each supported series",
+    )
     args = parser.parse_args()
 
     schedule = (await yaml_to_json(await fetch_text(SCHEDULE_URL))).get("schedules", [])
@@ -243,7 +251,7 @@ async def main() -> int:
     releases = build_releases(await list_patches(), schedule, eol)
     strategies = [s for s in args.pins.split(",") if s]
     existing = load_existing(args.output)
-    await compute_pins(releases, strategies, existing, args.jobs)
+    await compute_pins(releases, strategies, existing, args.jobs, args.latest_only)
 
     document = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
