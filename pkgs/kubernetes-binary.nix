@@ -34,7 +34,8 @@ stdenv.mkDerivation {
 
   installPhase = ''
     runHook preInstall
-    install -D -m 0755 ${flavor}/bin/* -t $out/bin
+    find ${flavor}/bin -mindepth 1 -maxdepth 1 -type f -perm -u+x \
+      -exec install -D -m 0755 {} -t $out/bin \;
     runHook postInstall
   '';
 
