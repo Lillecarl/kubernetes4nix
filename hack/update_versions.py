@@ -152,11 +152,21 @@ async def prefetch(strategy: str, version: str, limiter: anyio.Semaphore) -> str
     return convert.stdout.decode().strip()
 
 
+def load_document(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    return json.loads(path.read_text())
+
+
+def without_generated(document: dict[str, Any]) -> dict[str, Any]:
+    return {key: value for key, value in document.items() if key != "generated"}
+
+
 def load_existing(path: Path) -> dict[str, dict[str, str]]:
     """Pins from a previous run, keyed by version then strategy."""
-    if not path.exists():
+    document = load_document(path)
+    if document is None:
         return {}
-    document = json.loads(path.read_text())
     pins: dict[str, dict[str, str]] = {}
     for release in document.get("releases", []):
         for patch in release.get("patches", []):
@@ -250,7 +260,7 @@ async def compute_pins(
 async def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--output", type=Path, default=Path(__file__).resolve().parent.parent / "versions.json"
+        "--output", type=Path, default=Path("versions.json")
     )
     parser.add_argument(
         "--pins",
@@ -292,6 +302,11 @@ async def main() -> int:
         ),
         "releases": releases,
     }
+    # Keep the previous timestamp when nothing else moved, so a run with no new
+    # version leaves the file byte-identical and opens no pull request.
+    prior = load_document(args.output)
+    if prior is not None and without_generated(prior) == without_generated(document):
+        document["generated"] = prior["generated"]
     args.output.write_text(json.dumps(document, indent=2, sort_keys=False) + "\n")
     supported = [r for r in releases if r["supported"]]
     total = sum(len(r["patches"]) for r in supported)

@@ -1,0 +1,54 @@
+name: Update versions
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    name: Refresh the version matrix
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@main
+        with:
+          persist-credentials: false
+      - uses: cachix/install-nix-action@master
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ github.token }}
+            experimental-features = nix-command flakes
+            cores = 4
+            max-jobs = 1
+      - name: Update versions.json
+        run: >-
+          nix develop .# --command
+          python3 hack/update_versions.py
+          --pins src,client-amd64,server-amd64,node-amd64 --latest-only
+        timeout-minutes: 45
+      - name: Open or update the pull request
+        id: pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update-versions
+          delete-branch: true
+          labels: automerge
+          title: Update Kubernetes versions
+          commit-message: Update Kubernetes versions
+          body: |
+            Refreshed the supported version matrix and pinned the new releases.
+
+            Opened by the scheduled updater. CI is dispatched on the branch and
+            the pull request merges automatically when it passes.
+      # A pull request opened with GITHUB_TOKEN does not trigger workflows, so
+      # the CI run it needs is dispatched on the branch here.
+      - name: Dispatch CI on the branch
+        if: steps.pr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref update-versions

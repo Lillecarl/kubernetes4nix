@@ -1,0 +1,37 @@
+name: Auto-merge
+
+on:
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    name: Merge the update pull request
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      (github.event.workflow_run.event == 'pull_request' ||
+       github.event.workflow_run.event == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Merge the open pull request that carries the automerge label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          number=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 100 \
+            --json number,headRefOid,labels \
+            --jq "[.[] | select(.headRefOid == \"$HEAD_SHA\")
+                       | select(any(.labels[]; .name == \"automerge\"))
+                       | .number][0] // empty")
+          if [ -z "$number" ]; then
+            echo "No automerge pull request for $HEAD_SHA"
+            exit 0
+          fi
+          gh pr merge "$number" --repo "$GITHUB_REPOSITORY" --squash --delete-branch

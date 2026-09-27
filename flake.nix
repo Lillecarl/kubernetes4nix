@@ -64,7 +64,7 @@
             packages = [
               (pkgs.python3.withPackages (packages: [ packages.anyio ]))
               pkgs.git
-              pkgs.yq
+              pkgs.yq-go
             ];
           };
         }
