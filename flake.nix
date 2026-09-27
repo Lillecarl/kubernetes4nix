@@ -54,6 +54,8 @@
 
       legacyPackages = forAllSystems channelsFor;
 
+      overlays.default = import ./overlay.nix;
+
       devShells = forAllSystems (
         system:
         let
