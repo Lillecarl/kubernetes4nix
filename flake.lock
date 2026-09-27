@@ -1,5 +1,33 @@
 {
   "nodes": {
+    "cyberus-2605": {
+      "locked": {
+        "lastModified": 315532800,
+        "narHash": "sha256-9g1DKKpXpvZYq1TmIAzoU8wkxSVGBX5NF8H6g1Uv1EE=",
+        "type": "tarball",
+        "url": "https://channels.cyberus-linux.com/permanent/ctrlos-247c37c59474f7821f1ca9ea787305a03b150e74.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.cyberus-linux.com/permanent/ctrlos-247c37c59474f7821f1ca9ea787305a03b150e74.tar.xz"
+      }
+    },
+    "nixos-2605": {
+      "locked": {
+        "lastModified": 1790450978,
+        "narHash": "sha256-/eLCD/X9kaWJqPR47+fDozEC87Hjmm3i8gJbYmDAD7g=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5e2305d577ca00acbba631b05cb1094d172b29f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1790323409,
@@ -18,6 +46,8 @@
     },
     "root": {
       "inputs": {
+        "cyberus-2605": "cyberus-2605",
+        "nixos-2605": "nixos-2605",
         "nixpkgs": "nixpkgs"
       }
     }

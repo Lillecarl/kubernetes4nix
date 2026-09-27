@@ -20,21 +20,28 @@ env:
   CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
 jobs:
-  # Every list the other jobs matrix over comes from versions.json, so a
-  # version the updater adds is built without touching this file.
+  # Every list the other jobs matrix over comes from versions.json or the
+  # flake, so a new version or channel is built without editing this file.
   matrix:
-    name: Derive the version matrix
+    name: Derive the matrix
     runs-on: ubuntu-24.04
     outputs:
-      source: ${{ steps.version.outputs.source }}
-      binaries: ${{ steps.version.outputs.binaries }}
+      channels: ${{ steps.derive.outputs.channels }}
+      source: ${{ steps.derive.outputs.source }}
+      binaries: ${{ steps.derive.outputs.binaries }}
     steps:
       - uses: actions/checkout@main
         with:
           persist-credentials: false
-      - id: version
-        name: Read the supported versions
+      - uses: cachix/install-nix-action@master
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ github.token }}
+            experimental-features = nix-command flakes
+      - id: derive
+        name: Read the channels and the supported versions
         run: |
+          channels=$(nix eval '.#legacyPackages.x86_64-linux' --apply builtins.attrNames --json)
           source=$(jq -c '[.releases[] | select(.supported or .development) | .patches[].version]' versions.json)
           binaries=$(jq -c '
             [.releases[] | select(.supported or .development) | . as $series
@@ -45,8 +52,11 @@ jobs:
                    + (if .version == $series.latest then ["server", "node"] else [] end)),
                }]
           ' versions.json)
-          echo "source=$source" >> "$GITHUB_OUTPUT"
-          echo "binaries=$binaries" >> "$GITHUB_OUTPUT"
+          {
+            echo "channels=$channels"
+            echo "source=$source"
+            echo "binaries=$binaries"
+          } >> "$GITHUB_OUTPUT"
 
   eval:
     name: Evaluate the flake
@@ -64,17 +74,23 @@ jobs:
             max-jobs = 1
       - name: Check that every output evaluates
         run: nix flake check --no-build --print-build-logs
-        timeout-minutes: 30
+        timeout-minutes: 45
 
   source:
-    name: Source ${{ matrix.version }}
+    name: Source ${{ matrix.channel }} ${{ matrix.version }}
     needs:
       - matrix
-    if: github.event_name != 'pull_request'
+    # The 93 version builds run on main, on the schedule, and on the update
+    # pull request, which carries the automerge label. Ordinary pull requests
+    # only evaluate the flake and build the archives.
+    if: >-
+      github.event_name != 'pull_request' ||
+      contains(github.event.pull_request.labels.*.name, 'automerge')
     strategy:
       fail-fast: false
       max-parallel: 8
       matrix:
+        channel: ${{ fromJSON(needs.matrix.outputs.channels) }}
         version: ${{ fromJSON(needs.matrix.outputs.source) }}
     runs-on: ubuntu-24.04
     steps:
@@ -96,19 +112,22 @@ jobs:
           name: kubernetes4nix
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
           useDaemon: false
-      - name: Build and push kubernetes-${{ matrix.version }}
-        run: nix build --no-link --print-build-logs --keep-going ".#packages.x86_64-linux.\"kubernetes-${{ matrix.version }}\""
+      - name: Build and push kubernetes-${{ matrix.version }} on ${{ matrix.channel }}
+        run: >-
+          nix build --no-link --print-build-logs --keep-going
+          ".#legacyPackages.x86_64-linux.\"${{ matrix.channel }}\".packages.\"kubernetes-${{ matrix.version }}\""
         timeout-minutes: 120
     timeout-minutes: 150
 
   binaries:
-    name: Binaries ${{ matrix.entry.version }}
+    name: Binaries ${{ matrix.channel }} ${{ matrix.entry.version }}
     needs:
       - matrix
     strategy:
       fail-fast: false
       max-parallel: 8
       matrix:
+        channel: ${{ fromJSON(needs.matrix.outputs.channels) }}
         entry: ${{ fromJSON(needs.matrix.outputs.binaries) }}
     runs-on: ubuntu-24.04
     steps:
@@ -130,11 +149,11 @@ jobs:
           name: kubernetes4nix
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
           useDaemon: false
-      - name: Build and push release archives for ${{ matrix.entry.version }}
+      - name: Build and push release archives for ${{ matrix.entry.version }} on ${{ matrix.channel }}
         run: |
           for flavor in ${{ join(matrix.entry.flavors, ' ') }}; do
             nix build --no-link --print-build-logs --keep-going \
-              ".#packages.x86_64-linux.\"kubernetes-${flavor}-${{ matrix.entry.version }}\""
+              ".#legacyPackages.x86_64-linux.\"${{ matrix.channel }}\".packages.\"kubernetes-${flavor}-${{ matrix.entry.version }}\""
           done
         timeout-minutes: 45
     timeout-minutes: 60
