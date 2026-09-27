@@ -25,17 +25,42 @@ let
       hash = pin;
     };
 
+  # A series is built when it is supported, or still in development with
+  # release candidates and no final release yet.
+  included = release: release.supported || release.development;
+  stable = release: release.supported;
+
   set =
-    strategy: mkPackage:
+    {
+      strategy,
+      mkPackage,
+      include ? stable,
+    }:
     helpers.packageSet {
       releases = data.releases;
-      inherit strategy mkPackage;
+      inherit strategy mkPackage include;
     };
 
-  source = set "src" mkSource;
-  client = set "client-${arch}" (mkBinary "client");
-  server = set "server-${arch}" (mkBinary "server");
-  node = set "node-${arch}" (mkBinary "node");
+  source = set {
+    strategy = "src";
+    mkPackage = mkSource;
+    include = included;
+  };
+  client = set {
+    strategy = "client-${arch}";
+    mkPackage = mkBinary "client";
+    include = included;
+  };
+  server = set {
+    strategy = "server-${arch}";
+    mkPackage = mkBinary "server";
+    include = included;
+  };
+  node = set {
+    strategy = "node-${arch}";
+    mkPackage = mkBinary "node";
+    include = included;
+  };
 
   packages =
     (helpers.flat "kubernetes" source)
@@ -43,8 +68,16 @@ let
     // (helpers.flat "kubernetes-server" server)
     // (helpers.flat "kubernetes-node" node);
 
-  latestSource = helpers.latest source;
-  latestClient = helpers.latest client;
+  # Convenience aliases point at the latest released version, never a release
+  # candidate, so a development series does not become the default.
+  latestSource = helpers.latest (set {
+    strategy = "src";
+    mkPackage = mkSource;
+  });
+  latestClient = helpers.latest (set {
+    strategy = "client-${arch}";
+    mkPackage = mkBinary "client";
+  });
 in
 {
   outputs = {

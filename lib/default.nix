@@ -6,7 +6,8 @@ let
   /**
     Build a package set from the version matrix.
 
-    Only supported release series are considered. A patch is included when its
+    A release series is considered when `include` accepts it; supported
+    series by default. A patch of a considered series is included when its
     `pins` record holds a hash for `strategy`; a patch without that pin is
     skipped rather than making the whole set fail.
 
@@ -21,10 +22,14 @@ let
     `mkPackage`
     : `{ version, pin } -> derivation`
 
+    `include`
+    : `release -> Bool`, which series to include. Defaults to
+      `release: release.supported`
+
     # Type
 
     ```
-    packageSet :: { releases, strategy, mkPackage } -> { <version> = derivation; }
+    packageSet :: { releases, strategy, mkPackage, include ? ... } -> { <version> = derivation; }
     ```
   */
   packageSet =
@@ -32,6 +37,7 @@ let
       releases,
       strategy,
       mkPackage,
+      include ? (release: release.supported),
     }:
     let
       mkPatch =
@@ -45,7 +51,7 @@ let
             inherit pin;
           };
         };
-      mkRelease = release: lib.optionalAttrs release.supported (lib.mergeAttrsList (map mkPatch release.patches));
+      mkRelease = release: lib.optionalAttrs (include release) (lib.mergeAttrsList (map mkPatch release.patches));
     in
     lib.mergeAttrsList (map mkRelease releases);
 

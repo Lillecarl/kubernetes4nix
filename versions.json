@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-26T10:43:53Z",
+  "generated": "2026-09-27T09:29:04Z",
   "sources": {
     "schedule": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/schedule.yaml",
     "eol": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/eol.yaml",
@@ -15,6 +15,7 @@
     {
       "minor": "1.37",
       "supported": true,
+      "development": false,
       "releaseDate": "2026-08-26",
       "endOfLifeDate": "2027-10-28",
       "maintenanceModeStartDate": "2027-08-28",
@@ -42,6 +43,7 @@
     {
       "minor": "1.36",
       "supported": true,
+      "development": false,
       "releaseDate": "2026-04-22",
       "endOfLifeDate": "2027-06-28",
       "maintenanceModeStartDate": "2027-04-28",
@@ -97,6 +99,7 @@
     {
       "minor": "1.35",
       "supported": true,
+      "development": false,
       "releaseDate": "2025-12-17",
       "endOfLifeDate": "2027-02-28",
       "maintenanceModeStartDate": "2026-12-28",
@@ -180,6 +183,7 @@
     {
       "minor": "1.34",
       "supported": true,
+      "development": false,
       "releaseDate": "2025-08-27",
       "endOfLifeDate": "2026-10-27",
       "maintenanceModeStartDate": "2026-08-27",
@@ -284,6 +288,7 @@
     {
       "minor": "1.33",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2026-06-28",
       "maintenanceModeStartDate": null,
@@ -294,6 +299,7 @@
     {
       "minor": "1.32",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2026-02-28",
       "maintenanceModeStartDate": null,
@@ -304,6 +310,7 @@
     {
       "minor": "1.31",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2025-11-11",
       "maintenanceModeStartDate": null,
@@ -314,6 +321,7 @@
     {
       "minor": "1.30",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2025-07-15",
       "maintenanceModeStartDate": null,
@@ -324,6 +332,7 @@
     {
       "minor": "1.29",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2025-02-28",
       "maintenanceModeStartDate": null,
@@ -334,6 +343,7 @@
     {
       "minor": "1.28",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2024-10-22",
       "maintenanceModeStartDate": null,
@@ -344,6 +354,7 @@
     {
       "minor": "1.27",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2024-07-16",
       "maintenanceModeStartDate": null,
@@ -354,6 +365,7 @@
     {
       "minor": "1.26",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2024-02-28",
       "maintenanceModeStartDate": null,
@@ -364,6 +376,7 @@
     {
       "minor": "1.25",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2023-10-28",
       "maintenanceModeStartDate": null,
@@ -374,6 +387,7 @@
     {
       "minor": "1.24",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2023-07-28",
       "maintenanceModeStartDate": null,
@@ -384,6 +398,7 @@
     {
       "minor": "1.23",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2023-02-28",
       "maintenanceModeStartDate": null,
@@ -394,6 +409,7 @@
     {
       "minor": "1.22",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2022-12-08",
       "maintenanceModeStartDate": null,
@@ -404,6 +420,7 @@
     {
       "minor": "1.21",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2022-06-28",
       "maintenanceModeStartDate": null,
@@ -414,6 +431,7 @@
     {
       "minor": "1.20",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2022-02-28",
       "maintenanceModeStartDate": null,
@@ -424,6 +442,7 @@
     {
       "minor": "1.19",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2021-10-28",
       "maintenanceModeStartDate": null,
@@ -434,6 +453,7 @@
     {
       "minor": "1.18",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2021-06-18",
       "maintenanceModeStartDate": null,
@@ -444,6 +464,7 @@
     {
       "minor": "1.17",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2021-01-13",
       "maintenanceModeStartDate": null,
@@ -454,6 +475,7 @@
     {
       "minor": "1.16",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2020-09-02",
       "maintenanceModeStartDate": null,
@@ -464,6 +486,7 @@
     {
       "minor": "1.15",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2020-05-06",
       "maintenanceModeStartDate": null,
@@ -474,6 +497,7 @@
     {
       "minor": "1.14",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2019-12-11",
       "maintenanceModeStartDate": null,
@@ -484,6 +508,7 @@
     {
       "minor": "1.13",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2019-10-15",
       "maintenanceModeStartDate": null,
@@ -494,6 +519,7 @@
     {
       "minor": "1.12",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2019-07-08",
       "maintenanceModeStartDate": null,
@@ -504,6 +530,7 @@
     {
       "minor": "1.11",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2019-05-01",
       "maintenanceModeStartDate": null,
@@ -514,6 +541,7 @@
     {
       "minor": "1.10",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2019-02-13",
       "maintenanceModeStartDate": null,
@@ -524,6 +552,7 @@
     {
       "minor": "1.9",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2018-09-29",
       "maintenanceModeStartDate": null,
@@ -534,6 +563,7 @@
     {
       "minor": "1.8",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2018-07-12",
       "maintenanceModeStartDate": null,
@@ -544,6 +574,7 @@
     {
       "minor": "1.7",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2018-04-04",
       "maintenanceModeStartDate": null,
@@ -554,6 +585,7 @@
     {
       "minor": "1.6",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2017-11-23",
       "maintenanceModeStartDate": null,
@@ -564,6 +596,7 @@
     {
       "minor": "1.5",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2017-10-01",
       "maintenanceModeStartDate": null,
@@ -574,6 +607,7 @@
     {
       "minor": "1.4",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2017-04-21",
       "maintenanceModeStartDate": null,
@@ -584,6 +618,7 @@
     {
       "minor": "1.3",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2016-11-01",
       "maintenanceModeStartDate": null,
@@ -594,6 +629,7 @@
     {
       "minor": "1.2",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": "2016-10-23",
       "maintenanceModeStartDate": null,
@@ -604,6 +640,7 @@
     {
       "minor": "1.1",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": null,
       "maintenanceModeStartDate": null,
@@ -614,6 +651,7 @@
     {
       "minor": "1.0",
       "supported": false,
+      "development": false,
       "releaseDate": null,
       "endOfLifeDate": null,
       "maintenanceModeStartDate": null,

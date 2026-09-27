@@ -13,6 +13,10 @@ curated page, are the exhaustive source. The public release buckets are not:
 kubernetes-release stops at v1.30 and recent artifacts sit behind the private
 bucket that dl.k8s.io serves.
 
+A series with release-candidate tags but no final release is still in
+development. Its candidates are tracked so the next release builds before it
+ships; once the final release lands they drop out again.
+
 Pins (source-archive and release-archive hashes) are carried over from the
 existing file. A pin is computed only when it is absent, so a normal run over
 an unchanged matrix downloads nothing.
@@ -42,7 +46,7 @@ RELEASES_REMOTE: Final = RELEASES_GIT + ".git"
 
 DEFAULT_PINS: Final = ("src", "client-amd64")
 
-TAG_REF: Final = re.compile(r"^refs/tags/v(1\.\d+\.\d+)$")
+TAG_REF: Final = re.compile(r"^refs/tags/v(1\.\d+\.\d+(?:-rc\.\d+)?)$")
 
 UNPACKED: Final = frozenset({"src"})
 
@@ -66,9 +70,18 @@ async def yaml_to_json(text: str) -> Any:
     return json.loads(process.stdout)
 
 
-def version_key(version: str) -> tuple[int, int, int]:
-    major, minor, patch = version.split(".")
-    return int(major), int(minor), int(patch)
+def version_key(version: str) -> tuple[int, int, int, int, str, int]:
+    release, _, prerelease = version.partition("-")
+    major, minor, patch = release.split(".")
+    kind, _, number = prerelease.partition(".")
+    return (
+        int(major),
+        int(minor),
+        int(patch),
+        0 if prerelease else 1,
+        kind,
+        int(number) if number else 0,
+    )
 
 
 def minor_of(version: str) -> str:
@@ -81,7 +94,7 @@ def minor_key(minor: str) -> tuple[int, int]:
 
 
 async def list_patches() -> dict[str, list[str]]:
-    """Every released stable patch, grouped by release series."""
+    """Every released version, release candidates included, by series."""
     process = await anyio.run_process(
         ["git", "ls-remote", "--tags", "--refs", RELEASES_REMOTE], check=True
     )
@@ -164,21 +177,30 @@ def build_releases(
         series = schedule.get(minor, {})
         dead = eol.get(minor, {})
         supported = minor in schedule
-        series_patches = patches.get(minor, [])
+        versions = patches.get(minor, [])
+        stable = [version for version in versions if "-" not in version]
+        candidates = [version for version in versions if "-" in version]
+        # A series whose final release is not tagged yet is still in
+        # development, and its release candidates are what can be built.
+        development = not supported and f"{minor}.0" not in stable and bool(candidates)
+        if supported:
+            series_patches = stable
+        elif development:
+            series_patches = candidates
+        else:
+            series_patches = []
+        known = stable or candidates
         releases.append(
             {
                 "minor": minor,
                 "supported": supported,
+                "development": development,
                 "releaseDate": series.get("releaseDate"),
                 "endOfLifeDate": series.get("endOfLifeDate") or dead.get("endOfLifeDate"),
                 "maintenanceModeStartDate": series.get("maintenanceModeStartDate"),
                 "finalPatchRelease": dead.get("finalPatchRelease"),
-                "latest": series_patches[-1] if series_patches else None,
-                "patches": (
-                    [{"version": version, "pins": {}} for version in series_patches]
-                    if supported
-                    else []
-                ),
+                "latest": known[-1] if known else None,
+                "patches": [{"version": version, "pins": {}} for version in series_patches],
             }
         )
     return releases

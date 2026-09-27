@@ -35,9 +35,9 @@ jobs:
       - id: version
         name: Read the supported versions
         run: |
-          source=$(jq -c '[.releases[] | select(.supported) | .patches[].version]' versions.json)
+          source=$(jq -c '[.releases[] | select(.supported or .development) | .patches[].version]' versions.json)
           binaries=$(jq -c '
-            [.releases[] | select(.supported) | . as $series
+            [.releases[] | select(.supported or .development) | . as $series
              | $series.patches[]
              | {
                  version,
