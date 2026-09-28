@@ -56,7 +56,9 @@ let
     lib.mergeAttrsList (map mkRelease releases);
 
   /**
-    The highest version in a package set, or `null` when it is empty.
+    The highest released version in a package set, or `null` when it holds no
+    release. Release candidates are ignored: Nix orders `1.37.0-rc.1` above
+    `1.37.0`, so without the filter a candidate could win.
 
     # Type
 
@@ -67,9 +69,10 @@ let
   latest =
     set:
     let
-      versions = lib.sort lib.versionOlder (builtins.attrNames set);
+      releases = lib.filter (version: !(lib.hasInfix "-" version)) (builtins.attrNames set);
+      sorted = lib.sort lib.versionOlder releases;
     in
-    if versions == [ ] then null else set.${lib.last versions};
+    if sorted == [ ] then null else set.${lib.last sorted};
 
   /**
     Rename a package set for a flat, flake-friendly namespace.

@@ -189,17 +189,12 @@ def build_releases(
         supported = minor in schedule
         versions = patches.get(minor, [])
         stable = [version for version in versions if "-" not in version]
-        candidates = [version for version in versions if "-" in version]
         # A series whose final release is not tagged yet is still in
-        # development, and its release candidates are what can be built.
-        development = not supported and f"{minor}.0" not in stable and bool(candidates)
-        if supported:
-            series_patches = stable
-        elif development:
-            series_patches = candidates
-        else:
-            series_patches = []
-        known = stable or candidates
+        # development, and its candidates are all that can be built.
+        development = not supported and f"{minor}.0" not in stable and bool(versions)
+        # A supported series carries its release candidates too, so a test
+        # cluster can run the candidate before the final release lands.
+        series_patches = versions if supported or development else []
         releases.append(
             {
                 "minor": minor,
@@ -209,7 +204,7 @@ def build_releases(
                 "endOfLifeDate": series.get("endOfLifeDate") or dead.get("endOfLifeDate"),
                 "maintenanceModeStartDate": series.get("maintenanceModeStartDate"),
                 "finalPatchRelease": dead.get("finalPatchRelease"),
-                "latest": known[-1] if known else None,
+                "latest": versions[-1] if versions else None,
                 "patches": [{"version": version, "pins": {}} for version in series_patches],
             }
         )

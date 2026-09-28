@@ -68,16 +68,10 @@ let
     // (helpers.flat "kubernetes-server" server)
     // (helpers.flat "kubernetes-node" node);
 
-  # Convenience aliases point at the latest released version, never a release
-  # candidate, so a development series does not become the default.
-  latestSource = helpers.latest (set {
-    strategy = "src";
-    mkPackage = mkSource;
-  });
-  latestClient = helpers.latest (set {
-    strategy = "client-${arch}";
-    mkPackage = mkBinary "client";
-  });
+  # Convenience aliases point at the latest released version; helpers.latest
+  # ignores release candidates.
+  latestSource = helpers.latest source;
+  latestClient = helpers.latest client;
 in
 {
   outputs = {

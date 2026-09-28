@@ -26,10 +26,11 @@ jobs:
             cores = 4
             max-jobs = 1
       - name: Update versions.json
-        run: >-
-          nix develop .# --command
-          python3 hack/update_versions.py
-          --pins src,client-amd64,server-amd64,node-amd64 --latest-only
+        run: |
+          nix develop .# --command python3 hack/update_versions.py \
+            --pins src,client-amd64
+          nix develop .# --command python3 hack/update_versions.py \
+            --pins server-amd64,node-amd64 --latest-only
         timeout-minutes: 45
       - name: Open or update the pull request
         id: pr
