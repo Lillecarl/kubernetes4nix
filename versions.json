@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T12:50:21Z",
+  "generated": "2026-09-28T21:07:37Z",
   "sources": {
     "schedule": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/schedule.yaml",
     "eol": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/eol.yaml",
@@ -13,6 +13,27 @@
   ],
   "releases": [
     {
+      "minor": "1.38",
+      "supported": false,
+      "development": true,
+      "releaseDate": null,
+      "endOfLifeDate": null,
+      "maintenanceModeStartDate": null,
+      "finalPatchRelease": null,
+      "latest": "1.38.0-alpha.0",
+      "patches": [
+        {
+          "version": "1.38.0-alpha.0",
+          "pins": {
+            "src": "sha256-9HL0H5ngec8Edr+wamZsnX0+gOYn4TBbaCEjaf52b78=",
+            "client-amd64": "sha256-ZkayToM6l6ZHmQJAETuyU5tumoN3A7lwuo2UdmvJpSk=",
+            "server-amd64": "sha256-9SWyelu5qxE3lUpybPpJo/A0/fxuCoBoGN5i6IZOKY0=",
+            "node-amd64": "sha256-AF3oNIt2x3gd86XJmuAOI61bAxSS7nfp6Z1oT4Xt7x0="
+          }
+        }
+      ]
+    },
+    {
       "minor": "1.37",
       "supported": true,
       "development": false,
@@ -22,6 +43,41 @@
       "finalPatchRelease": null,
       "latest": "1.37.1",
       "patches": [
+        {
+          "version": "1.37.0-alpha.0",
+          "pins": {
+            "src": "sha256-7Rh06kUo8hgtrbSYspYVJNBrQURttFGbLym6ZMt2v9o=",
+            "client-amd64": "sha256-PedftpPfEdPSCbQzGX98qlTMhpbsoIJl8yioz2nBf6U="
+          }
+        },
+        {
+          "version": "1.37.0-alpha.1",
+          "pins": {
+            "src": "sha256-/a0Eyc6NHPeb0whka8mk6XCCqeaBK2lK/fx0nrI3T/E=",
+            "client-amd64": "sha256-yYRlfO4/Q/FWgDExdKoeQ4tMei3M+HDWQ9PFnTRUXL0="
+          }
+        },
+        {
+          "version": "1.37.0-alpha.2",
+          "pins": {
+            "src": "sha256-rQsPZ8kW30NO3UKnTm+W1hLHTTpteCax/9NO6/DRico=",
+            "client-amd64": "sha256-x0Wdra2mEQIO6P33eu26UdQ1kWKfTW+mOL5kBf3tPg8="
+          }
+        },
+        {
+          "version": "1.37.0-alpha.3",
+          "pins": {
+            "src": "sha256-1koqgzKsZAH8/67SvX692TGsSRHZmNjINNtNtAH+mq4=",
+            "client-amd64": "sha256-abbfkNMtZPieRub/0Rd5w3f/efnaLQ4yLYmPB+xJFYE="
+          }
+        },
+        {
+          "version": "1.37.0-beta.0",
+          "pins": {
+            "src": "sha256-1udJSdjw8JOlepkOSkMqgASDVlymwgyhvi2B1SuiOAo=",
+            "client-amd64": "sha256-ww56zKC54L81/+lWSRUVqn/uBFtFqnI8tTNtZlaB9l8="
+          }
+        },
         {
           "version": "1.37.0-rc.0",
           "pins": {
@@ -64,6 +120,34 @@
       "finalPatchRelease": null,
       "latest": "1.36.5",
       "patches": [
+        {
+          "version": "1.36.0-alpha.0",
+          "pins": {
+            "src": "sha256-E/leS5tL4t1n5nj/MP8kSTOYj5kn0+h6fLXv++14UhU=",
+            "client-amd64": "sha256-TUI7EMDmRhfwS4sZN1on4An6GJmCoYiIafoB7HpjWh0="
+          }
+        },
+        {
+          "version": "1.36.0-alpha.1",
+          "pins": {
+            "src": "sha256-77NaDbL/DGIj8E3dzFADd0Iw+SzcsiUgHZJdD+rdpR0=",
+            "client-amd64": "sha256-FG8w7MfGxSJOZyPmhBKUB2PW4Yb3MtVgHAtpbS9MR08="
+          }
+        },
+        {
+          "version": "1.36.0-alpha.2",
+          "pins": {
+            "src": "sha256-ctvA+vczgOQZzO/OA3FgqR8UrTjHnUZPn/QA2Nv+Djg=",
+            "client-amd64": "sha256-Z1WT9fMamaX9aXzXwvGsIfrYZ4ANjwVZ1rhGcwTsg8w="
+          }
+        },
+        {
+          "version": "1.36.0-beta.0",
+          "pins": {
+            "src": "sha256-YTrZlhe7rLmtw9aYHWMA6fRiP/7Tbmg98oruHmjH51Y=",
+            "client-amd64": "sha256-on3VcWqHmKcW1sH6X+/sRKqyaCMQzQOs1WEH1xAtsXI="
+          }
+        },
         {
           "version": "1.36.0-rc.0",
           "pins": {
@@ -134,6 +218,41 @@
       "finalPatchRelease": null,
       "latest": "1.35.9",
       "patches": [
+        {
+          "version": "1.35.0-alpha.0",
+          "pins": {
+            "src": "sha256-XQAPQDIxWCaYw+EAL9rlk6fILqyEt2CnzVWMtExdlz4=",
+            "client-amd64": "sha256-DrqpTtZO9RWLztRTuee5xqlY9KlXFM4DCdBwloDEJ0w="
+          }
+        },
+        {
+          "version": "1.35.0-alpha.1",
+          "pins": {
+            "src": "sha256-1M2HzLdg8D5cSiWT7oc+n/hL0R0j1gPemvKNOTtCNeg=",
+            "client-amd64": "sha256-l+LobiNWHhlD7iIXrE8ULi1K8+wDXvjjnVtMHpxtUjA="
+          }
+        },
+        {
+          "version": "1.35.0-alpha.2",
+          "pins": {
+            "src": "sha256-N6lFNtVWUiMsF0D/xKqotCpD+aQ1rYupGvFbzxjBIOo=",
+            "client-amd64": "sha256-Gdk6uTWT8e8fjS7xpqYa6tP4V4jJWVRnizM21aiCNVc="
+          }
+        },
+        {
+          "version": "1.35.0-alpha.3",
+          "pins": {
+            "src": "sha256-CiXYPdLc3G5gNR5iZQEV/KfurWDaypEoIo2eJyReMBQ=",
+            "client-amd64": "sha256-pwSui55sM3AI3KhlIMdgciPsV99iNOBs7zYJV2/U2kk="
+          }
+        },
+        {
+          "version": "1.35.0-beta.0",
+          "pins": {
+            "src": "sha256-AJ1RhnGwAJ6ouf76MhlVFjkBWJnwYNgfvzyi+TauGN4=",
+            "client-amd64": "sha256-xpkWl32+p+ShpK15xL7MU8pyuB9AJrizDbQp/5Ys1a8="
+          }
+        },
         {
           "version": "1.35.0-rc.0",
           "pins": {
@@ -232,6 +351,41 @@
       "finalPatchRelease": null,
       "latest": "1.34.12",
       "patches": [
+        {
+          "version": "1.34.0-alpha.0",
+          "pins": {
+            "src": "sha256-G0VHbSoOnZ6jCL5mGlKp5zNK90Yot0ccEnayOSfbLM0=",
+            "client-amd64": "sha256-UlhFyL+jHT3f+bppsiGSUA65xstBdMg/zl7mnjEvIGM="
+          }
+        },
+        {
+          "version": "1.34.0-alpha.1",
+          "pins": {
+            "src": "sha256-7yoyDKyvX/Cf6UOy/47gCplwzPKaaUDlz43vM/HRBBE=",
+            "client-amd64": "sha256-6L5aELl8to3PN2UeS6xZGc2XWYAMhg/3FZEIC2y3pvE="
+          }
+        },
+        {
+          "version": "1.34.0-alpha.2",
+          "pins": {
+            "src": "sha256-Yfu3swNdOnin7LesShzL3GmfZreFAzkHfzmkbIyQOKw=",
+            "client-amd64": "sha256-v29eWN27NozVqJVnLiVb/aVLryZXM5eJPNd9Wg00qXo="
+          }
+        },
+        {
+          "version": "1.34.0-alpha.3",
+          "pins": {
+            "src": "sha256-Owse3vnku42UhcpSahg2m3XNp8nb4xdiPY8zfkA3w6U=",
+            "client-amd64": "sha256-jo2DwSXTyVmzTypOLlA4y2xV+8iv4jXCB4HVnIgmEwQ="
+          }
+        },
+        {
+          "version": "1.34.0-beta.0",
+          "pins": {
+            "src": "sha256-AIZWH4e4vxmVJNcXNMX9nrsy0elSLAw5BEHUbp4tpxc=",
+            "client-amd64": "sha256-ZhJGhtrxkDq36OIIWJ2PF5y0+lwl7u/2mMGFr8P4rZM="
+          }
+        },
         {
           "version": "1.34.0-rc.0",
           "pins": {
@@ -554,7 +708,7 @@
       "endOfLifeDate": "2020-05-06",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.15.12",
-      "latest": "1.15.12",
+      "latest": "1.15.13-beta.0",
       "patches": []
     },
     {
@@ -565,7 +719,7 @@
       "endOfLifeDate": "2019-12-11",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.14.10",
-      "latest": "1.14.10",
+      "latest": "1.14.11-beta.1",
       "patches": []
     },
     {
@@ -576,7 +730,7 @@
       "endOfLifeDate": "2019-10-15",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.13.12",
-      "latest": "1.13.12",
+      "latest": "1.13.13-beta.0",
       "patches": []
     },
     {
@@ -587,7 +741,7 @@
       "endOfLifeDate": "2019-07-08",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.12.10",
-      "latest": "1.12.10",
+      "latest": "1.12.11-beta.0",
       "patches": []
     },
     {
@@ -598,7 +752,7 @@
       "endOfLifeDate": "2019-05-01",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.11.10",
-      "latest": "1.11.10",
+      "latest": "1.11.11-beta.0",
       "patches": []
     },
     {
@@ -609,7 +763,7 @@
       "endOfLifeDate": "2019-02-13",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.10.13",
-      "latest": "1.10.13",
+      "latest": "1.10.14-beta.0",
       "patches": []
     },
     {
@@ -620,7 +774,7 @@
       "endOfLifeDate": "2018-09-29",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.9.11",
-      "latest": "1.9.11",
+      "latest": "1.9.12-beta.0",
       "patches": []
     },
     {
@@ -631,7 +785,7 @@
       "endOfLifeDate": "2018-07-12",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.8.15",
-      "latest": "1.8.15",
+      "latest": "1.8.16-beta.0",
       "patches": []
     },
     {
@@ -642,7 +796,7 @@
       "endOfLifeDate": "2018-04-04",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.7.16",
-      "latest": "1.7.16",
+      "latest": "1.7.17-beta.0",
       "patches": []
     },
     {
@@ -653,7 +807,7 @@
       "endOfLifeDate": "2017-11-23",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.6.13",
-      "latest": "1.6.13",
+      "latest": "1.6.14-beta.0",
       "patches": []
     },
     {
@@ -664,7 +818,7 @@
       "endOfLifeDate": "2017-10-01",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.5.8",
-      "latest": "1.5.8",
+      "latest": "1.5.9-beta.0",
       "patches": []
     },
     {
@@ -686,7 +840,7 @@
       "endOfLifeDate": "2016-11-01",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.3.10",
-      "latest": "1.3.10",
+      "latest": "1.3.11-beta.0",
       "patches": []
     },
     {
@@ -697,7 +851,7 @@
       "endOfLifeDate": "2016-10-23",
       "maintenanceModeStartDate": null,
       "finalPatchRelease": "1.2.7",
-      "latest": "1.2.7",
+      "latest": "1.2.8-beta.0",
       "patches": []
     },
     {
@@ -708,7 +862,7 @@
       "endOfLifeDate": null,
       "maintenanceModeStartDate": null,
       "finalPatchRelease": null,
-      "latest": "1.1.8",
+      "latest": "1.1.9-beta.0",
       "patches": []
     },
     {

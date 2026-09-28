@@ -26,7 +26,7 @@ let
     };
 
   # A series is built when it is supported, or still in development with
-  # release candidates and no final release yet.
+  # prereleases and no final release yet.
   included = release: release.supported || release.development;
   stable = release: release.supported;
 
@@ -69,7 +69,7 @@ let
     // (helpers.flat "kubernetes-node" node);
 
   # Convenience aliases point at the latest released version; helpers.latest
-  # ignores release candidates.
+  # ignores prereleases.
   latestSource = helpers.latest source;
   latestClient = helpers.latest client;
 in

@@ -13,9 +13,9 @@ curated page, are the exhaustive source. The public release buckets are not:
 kubernetes-release stops at v1.30 and recent artifacts sit behind the private
 bucket that dl.k8s.io serves.
 
-A series with release-candidate tags but no final release is still in
-development. Its candidates are tracked so the next release builds before it
-ships; once the final release lands they drop out again.
+A series with prerelease tags but no final release is still in development.
+Its candidates are tracked so the next release builds before it ships; once
+the final release lands they stay, next to it.
 
 Pins (source-archive and release-archive hashes) are carried over from the
 existing file. A pin is computed only when it is absent, so a normal run over
@@ -46,7 +46,7 @@ RELEASES_REMOTE: Final = RELEASES_GIT + ".git"
 
 DEFAULT_PINS: Final = ("src", "client-amd64")
 
-TAG_REF: Final = re.compile(r"^refs/tags/v(1\.\d+\.\d+(?:-rc\.\d+)?)$")
+TAG_REF: Final = re.compile(r"^refs/tags/v(1\.\d+\.\d+(?:-(?:alpha|beta|rc)\.\d+)?)$")
 
 UNPACKED: Final = frozenset({"src"})
 
@@ -192,8 +192,8 @@ def build_releases(
         # A series whose final release is not tagged yet is still in
         # development, and its candidates are all that can be built.
         development = not supported and f"{minor}.0" not in stable and bool(versions)
-        # A supported series carries its release candidates too, so a test
-        # cluster can run the candidate before the final release lands.
+        # A supported series carries its prereleases too, so a test cluster
+        # can run a candidate before the final release lands.
         series_patches = versions if supported or development else []
         releases.append(
             {

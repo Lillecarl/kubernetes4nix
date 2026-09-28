@@ -57,8 +57,8 @@ let
 
   /**
     The highest released version in a package set, or `null` when it holds no
-    release. Release candidates are ignored: Nix orders `1.37.0-rc.1` above
-    `1.37.0`, so without the filter a candidate could win.
+    release. Prereleases are ignored: Nix orders `1.37.0-rc.1` above `1.37.0`,
+    so without the filter a candidate could win.
 
     # Type
 
