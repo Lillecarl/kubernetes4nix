@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T21:07:37Z",
+  "generated": "2026-10-10T10:36:41Z",
   "sources": {
     "schedule": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/schedule.yaml",
     "eol": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/eol.yaml",
@@ -20,7 +20,7 @@
       "endOfLifeDate": null,
       "maintenanceModeStartDate": null,
       "finalPatchRelease": null,
-      "latest": "1.38.0-alpha.0",
+      "latest": "1.38.0-alpha.2",
       "patches": [
         {
           "version": "1.38.0-alpha.0",
@@ -29,6 +29,22 @@
             "client-amd64": "sha256-ZkayToM6l6ZHmQJAETuyU5tumoN3A7lwuo2UdmvJpSk=",
             "server-amd64": "sha256-9SWyelu5qxE3lUpybPpJo/A0/fxuCoBoGN5i6IZOKY0=",
             "node-amd64": "sha256-AF3oNIt2x3gd86XJmuAOI61bAxSS7nfp6Z1oT4Xt7x0="
+          }
+        },
+        {
+          "version": "1.38.0-alpha.1",
+          "pins": {
+            "src": "sha256-y3c/sIlJhdSoKRSQzsm6w/fgRWaNS9s5srczh/wJ3vc=",
+            "client-amd64": "sha256-uvxwd1lhU/SJTmaBREi3DEft75cImI30gWzXCs3AnxE="
+          }
+        },
+        {
+          "version": "1.38.0-alpha.2",
+          "pins": {
+            "src": "sha256-nFZPh3K22oBzx+rCCZIzY+vZwhK7sty0OHeoCckCKE0=",
+            "client-amd64": "sha256-K6fhoKRZRNK2oDb2dsTvfeb5b8FKoiVzSyZh9pb8hxc=",
+            "server-amd64": "sha256-PzA4gLdt6DqG3WM7+J1XEzBIBNx5qKHO0b7lonyWXY8=",
+            "node-amd64": "sha256-/SJ/7e869qohBA5D3KkV9PMOGM6urruwdDDdAFFEL5w="
           }
         }
       ]
