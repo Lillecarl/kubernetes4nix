@@ -2,6 +2,7 @@
   lib,
   stdenv,
   fetchurl,
+  autoPatchelfHook,
   version,
   hash,
   flavor,
@@ -29,6 +30,9 @@ stdenv.mkDerivation {
   };
 
   sourceRoot = "kubernetes";
+  # The kubelet is dynamically linked against glibc (the others are static),
+  # and NixOS has no /lib64/ld-linux-x86-64.so.2 to run it.
+  nativeBuildInputs = [ autoPatchelfHook ];
   dontConfigure = true;
   dontBuild = true;
 
