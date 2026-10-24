@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-23T18:18:16Z",
+  "generated": "2026-10-24T08:52:22Z",
   "sources": {
     "schedule": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/schedule.yaml",
     "eol": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/eol.yaml",
@@ -34,12 +34,19 @@
         },
         {
           "version": "1.38.0-alpha.1",
-          "pins": {}
+          "pins": {
+            "src": "sha256-y3c/sIlJhdSoKRSQzsm6w/fgRWaNS9s5srczh/wJ3vc=",
+            "client-amd64": "sha256-uvxwd1lhU/SJTmaBREi3DEft75cImI30gWzXCs3AnxE="
+          }
         },
         {
           "version": "1.38.0-alpha.2",
           "pins": {
-            "node-arm64": "sha256-qbKFTG+hDcYLqn81XkLjGtABpwATGC0+x0F01tp2GzE="
+            "node-arm64": "sha256-qbKFTG+hDcYLqn81XkLjGtABpwATGC0+x0F01tp2GzE=",
+            "src": "sha256-nFZPh3K22oBzx+rCCZIzY+vZwhK7sty0OHeoCckCKE0=",
+            "client-amd64": "sha256-K6fhoKRZRNK2oDb2dsTvfeb5b8FKoiVzSyZh9pb8hxc=",
+            "server-amd64": "sha256-PzA4gLdt6DqG3WM7+J1XEzBIBNx5qKHO0b7lonyWXY8=",
+            "node-amd64": "sha256-/SJ/7e869qohBA5D3KkV9PMOGM6urruwdDDdAFFEL5w="
           }
         }
       ]
