@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-23T18:18:16Z",
+  "generated": "2026-10-31T10:23:55Z",
   "sources": {
     "schedule": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/schedule.yaml",
     "eol": "https://raw.githubusercontent.com/kubernetes/website/main/data/releases/eol.yaml",
@@ -21,7 +21,7 @@
       "endOfLifeDate": null,
       "maintenanceModeStartDate": null,
       "finalPatchRelease": null,
-      "latest": "1.38.0-alpha.2",
+      "latest": "1.38.0-alpha.3",
       "patches": [
         {
           "version": "1.38.0-alpha.0",
@@ -34,12 +34,26 @@
         },
         {
           "version": "1.38.0-alpha.1",
-          "pins": {}
+          "pins": {
+            "src": "sha256-y3c/sIlJhdSoKRSQzsm6w/fgRWaNS9s5srczh/wJ3vc=",
+            "client-amd64": "sha256-uvxwd1lhU/SJTmaBREi3DEft75cImI30gWzXCs3AnxE="
+          }
         },
         {
           "version": "1.38.0-alpha.2",
           "pins": {
-            "node-arm64": "sha256-qbKFTG+hDcYLqn81XkLjGtABpwATGC0+x0F01tp2GzE="
+            "node-arm64": "sha256-qbKFTG+hDcYLqn81XkLjGtABpwATGC0+x0F01tp2GzE=",
+            "src": "sha256-nFZPh3K22oBzx+rCCZIzY+vZwhK7sty0OHeoCckCKE0=",
+            "client-amd64": "sha256-K6fhoKRZRNK2oDb2dsTvfeb5b8FKoiVzSyZh9pb8hxc="
+          }
+        },
+        {
+          "version": "1.38.0-alpha.3",
+          "pins": {
+            "src": "sha256-IiFlat8HnChGAP+hMNgXVtAhimT3O17me22/qlnuW7k=",
+            "client-amd64": "sha256-clkD5HE6/PjiHnw+DkBAVEU/ctpCWU3uOBRY3J0fRY8=",
+            "server-amd64": "sha256-4aCxjiKutvajgpoa2hd/tbjshFjV37N4SNC9ONQtCh8=",
+            "node-amd64": "sha256-mGBPLVGAKfg2A4hVkaxkGX7k5H/RUPlatbvlna85gnM="
           }
         }
       ]
@@ -52,7 +66,7 @@
       "endOfLifeDate": "2027-10-28",
       "maintenanceModeStartDate": "2027-08-28",
       "finalPatchRelease": null,
-      "latest": "1.37.1",
+      "latest": "1.37.2",
       "patches": [
         {
           "version": "1.37.0-alpha.0",
@@ -119,6 +133,15 @@
             "node-amd64": "sha256-lWyayF5CRXMyiQEMWcWJryiZMe5Dqqtd/bCm6d/5X38=",
             "node-arm64": "sha256-HxGASBQWmmMQp0v+Zxp3uw+gpczVA6vidCD6e4DtfPc="
           }
+        },
+        {
+          "version": "1.37.2",
+          "pins": {
+            "src": "sha256-Bbyu5hMQTSrvr/kDFHlRnfz5RIR7ecBfTFOGTCffn5c=",
+            "client-amd64": "sha256-nWAt5cIGkBtNnLB5bxolT1JKu4ks7+FLU1EjvRgWOdo=",
+            "server-amd64": "sha256-OOFvTvGjvxQG76WPF3sXC5Qemqbe3QuPHifCpS8b3zg=",
+            "node-amd64": "sha256-/bLCwlE3moEs4TSKMkhVtHWJB6TfwDCVvKVvvwWZc8k="
+          }
         }
       ]
     },
@@ -130,7 +153,7 @@
       "endOfLifeDate": "2027-06-28",
       "maintenanceModeStartDate": "2027-04-28",
       "finalPatchRelease": null,
-      "latest": "1.36.5",
+      "latest": "1.36.6",
       "patches": [
         {
           "version": "1.36.0-alpha.0",
@@ -218,6 +241,15 @@
             "node-amd64": "sha256-iyANVKV9WpcKM59pgv259r25hnUDGEgRlHlCn0vwpRo=",
             "node-arm64": "sha256-yYjW8VUmyPz1rWeZ9GbdaKRxCnjfX/0y94SK2+2815E="
           }
+        },
+        {
+          "version": "1.36.6",
+          "pins": {
+            "src": "sha256-4/231gwj+g9A1oDQKIdmJ6lrfquVhTLSxe6hzFuaDFA=",
+            "client-amd64": "sha256-omDf2NU619LpZA8KF6To2NbJrI5jneN2aO+oWt5NQCQ=",
+            "server-amd64": "sha256-cC1lKbXre/uRnas1Qs1CDM8xb8pqp8UGtpFpvRKyanw=",
+            "node-amd64": "sha256-82CODZyEEht/F6Z2g8aypOt3qzsyC8HH+09x3G+f7C4="
+          }
         }
       ]
     },
@@ -229,7 +261,7 @@
       "endOfLifeDate": "2027-02-28",
       "maintenanceModeStartDate": "2026-12-28",
       "finalPatchRelease": null,
-      "latest": "1.35.9",
+      "latest": "1.35.10",
       "patches": [
         {
           "version": "1.35.0-alpha.0",
@@ -352,6 +384,15 @@
             "node-amd64": "sha256-fsx6IdhWrga3I7M2XOZPcfgOc2H5R/EPHgm9maRGPAM=",
             "node-arm64": "sha256-mXHkgSrXvPoQSx5SPL8DRHkDAd+lHl7KKyCeSIdyzEs="
           }
+        },
+        {
+          "version": "1.35.10",
+          "pins": {
+            "src": "sha256-LaqG0zNn43JEt04isr8MTtLdH+M59EZcWpC0o64U2FY=",
+            "client-amd64": "sha256-5MMvsI9Ql3ZJ9sqbG4Q5MmiEwl1Ix7HCLtCxkE6cJEg=",
+            "server-amd64": "sha256-JgxO/R8pgTZmHUAATH3w+9Td1Uh12dy6+h5sNYD6w1s=",
+            "node-amd64": "sha256-raJeQOz3QF3VAd76Mz3pjQBde9uIfg/TmubQq5TucyM="
+          }
         }
       ]
     },
@@ -363,7 +404,7 @@
       "endOfLifeDate": "2026-10-27",
       "maintenanceModeStartDate": "2026-08-27",
       "finalPatchRelease": null,
-      "latest": "1.34.12",
+      "latest": "1.34.13",
       "patches": [
         {
           "version": "1.34.0-alpha.0",
@@ -513,6 +554,15 @@
             "server-amd64": "sha256-mVP2eAZAIXxr7wFpkqdrDMXGED4f6zO2ynMny8y4beU=",
             "node-amd64": "sha256-IttcskZQ20dEINgmyLQ6vfIMuG58FS8ZaRRLfUdrbJI=",
             "node-arm64": "sha256-2xysNjRIlq6t8rEMt0w4/UFJgfof/hBwuwtaDAxNiWc="
+          }
+        },
+        {
+          "version": "1.34.13",
+          "pins": {
+            "src": "sha256-+GkbEMKzjnN+eXzWOXZnye3bblBnByRkbOT80jVkfsI=",
+            "client-amd64": "sha256-7PmGERFFYZy2r3lqXzGyyHOuXjLSzEpnpWmGLJvBMWc=",
+            "server-amd64": "sha256-EPQjWtXpGbf9RuHb8pUiGKT8fAwoyLlArQdM/EMTmso=",
+            "node-amd64": "sha256-rDdbibZILUk8d8FuyuMCbFRfiVkEe3j1DvBY3E9gZX4="
           }
         }
       ]
